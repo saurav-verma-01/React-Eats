@@ -1,16 +1,11 @@
 import RestrauntCard from "./RestrauntCard";
-
+import restaurants from "../restrauntData";
 const RestrauntContainer = () => {
   return (
     <div className="restraunt-container">
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
+      {restaurants.map((rest) => {
+        return <RestrauntCard key={rest.info.id} rest={rest} />;
+      })}
     </div>
   );
 };
