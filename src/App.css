@@ -1,42 +1,91 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.header {
+  background-color: #d0e1e8;
 }
-
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.logo-container {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-list {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.restraunt-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  background-color: #ffffff;
+  margin: 5rem 0;
 }
 
-.card {
-  padding: 2em;
+.restraunt-card {
+  width: 16rem;
+  height: 22rem;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid #d0e1e8;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.restraunt-card:is(:hover, :focus) {
+  border-color: transparent;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+}
+.restraunt-img-container {
+  height: 12rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.restraunt-img {
+  transition: all 1.2s ease;
+}
+.restraunt-img:is(:hover, :focus) {
+  transform: scale(1.1);
 }
 
-.read-the-docs {
-  color: #888;
+.restraunt-info,
+.cuisines-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.eta {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.restraunt-name {
+  font-size: 1.15rem;
+}
+.restraunt-rating {
+  background-color: #267e3e;
+  color: #f4f8f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+.cuisines-info {
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 1.1rem;
 }
