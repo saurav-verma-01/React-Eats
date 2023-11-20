@@ -1,7 +1,7 @@
 import { IMAGE_URL } from "../utils/constants";
 
 const RestrauntCard = ({ rest }) => {
-  const { id, name, cloudinaryImageId, avgRating, costForTwo, cuisines, sla } =
+  const { name, cloudinaryImageId, avgRating, costForTwo, cuisines, sla } =
     rest.info;
 
   return (

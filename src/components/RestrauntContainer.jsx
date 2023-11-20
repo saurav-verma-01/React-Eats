@@ -1,9 +1,10 @@
-import { restaurants } from "../utils/constants";
 import RestrauntCard from "./RestrauntCard";
-const RestrauntContainer = () => {
+const RestrauntContainer = ({ restrauntAr }) => {
+  const listOFRestraunt = restrauntAr;
+
   return (
     <div className="restraunt-container">
-      {restaurants.map((rest) => {
+      {listOFRestraunt.map((rest) => {
         return <RestrauntCard key={rest.info.id} rest={rest} />;
       })}
     </div>

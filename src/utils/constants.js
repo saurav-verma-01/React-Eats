@@ -781,4 +781,5 @@ const restaurants = [
 
 const IMAGE_URL = `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/`;
 
-export { restaurants, IMAGE_URL };
+export { IMAGE_URL };
+export default restaurants;

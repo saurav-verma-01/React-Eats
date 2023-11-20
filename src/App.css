@@ -101,24 +101,30 @@
   margin: 2rem 0;
   display: flex;
   justify-content: center;
+  gap: 2rem;
 }
 
-.filter-btn {
+.btn {
   width: 8rem;
   height: 2rem;
   cursor: pointer;
-
   transition: all 0.3s ease;
   text-transform: uppercase;
-  background-color: cadetblue;
-  color: white;
   box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
 }
-.filter-btn:is(:hover) {
+.btn:is(:hover) {
   box-shadow: 0.75rem 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
   transform: translateY(-0.1rem);
 }
-.filter-btn:active {
+.btn:active {
   box-shadow: 0.35rem 0.35rem 1rem rgba(0, 0, 0, 0.3);
   transform: translateY(-0.01rem);
+}
+.filter-btn {
+  background-color: cadetblue;
+  color: white;
+}
+.all-btn {
+  background-color: thistle;
+  color: midnightblue;
 }
