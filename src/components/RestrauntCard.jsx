@@ -1,6 +1,6 @@
-const RestrauntCard = ({ rest }) => {
-  const IMAGEURL = `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/`;
+import { IMAGE_URL } from "../utils/constants";
 
+const RestrauntCard = ({ rest }) => {
   const { id, name, cloudinaryImageId, avgRating, costForTwo, cuisines, sla } =
     rest.info;
 
@@ -8,7 +8,7 @@ const RestrauntCard = ({ rest }) => {
     <div className="restraunt-card">
       <div className="restraunt-img-container">
         <img
-          src={`${IMAGEURL}${cloudinaryImageId}`}
+          src={IMAGE_URL + cloudinaryImageId}
           alt={name}
           className="restraunt-img"
         />

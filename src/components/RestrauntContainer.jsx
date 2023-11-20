@@ -1,5 +1,5 @@
+import { restaurants } from "../utils/constants";
 import RestrauntCard from "./RestrauntCard";
-import restaurants from "../restrauntData";
 const RestrauntContainer = () => {
   return (
     <div className="restraunt-container">
