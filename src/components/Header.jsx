@@ -1,6 +1,8 @@
+import { useState } from "react";
 import logo from "../assets/logo.jpg";
 
 const Header = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
   return (
     <header className="header">
       <nav className="navbar container">
@@ -29,6 +31,12 @@ const Header = () => {
               Cart
             </a>
           </li>
+          <button
+            className="btn btn-login"
+            onClick={() => setLoggedIn((prev) => !prev)}
+          >
+            {loggedIn ? "Logout" : "Login"}
+          </button>
         </ul>
       </nav>
     </header>

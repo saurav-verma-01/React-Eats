@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import restaurants from "../utils/constants";
+// import restaurants from "../utils/constants";
 import RestrauntContainer from "./RestrauntContainer";
+import Shimmer from "./Shimmer";
 // const SWIGGY_API_URL = `https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.4924134&lng=77.673673&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
 // `;
 const Body = () => {
-  const [restrauntList, setRestrauntList] = useState(restaurants);
+  const [restrauntList, setRestrauntList] = useState([]);
 
   useEffect(() => {
     fetchRestrauntData();
   }, []);
+  let allRestraunts = [];
 
   const fetchRestrauntData = async () => {
     const response = await fetch(
@@ -21,19 +23,23 @@ const Body = () => {
 
     console.log(swiggyRestraunts);
     setRestrauntList(swiggyRestraunts);
+    allRestraunts = swiggyRestraunts;
   };
 
   const filterRestraunt = () => {
     const filteredRestraunt = restrauntList.filter(
-      (res) => res.info.avgRating > 4
+      (res) => res.info?.avgRating > 4
     );
     setRestrauntList(filteredRestraunt);
   };
 
   const allRestraunt = () => {
-    setRestrauntList(restaurants);
+    setRestrauntList(allRestraunts);
   };
 
+  if (restrauntList.length === 0) {
+    return <Shimmer />;
+  }
   return (
     <main>
       <div className="container">
